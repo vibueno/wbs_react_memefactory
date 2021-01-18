@@ -26,11 +26,17 @@ function App() {
     <>
       <h1>The Meme Mine</h1>
       <GenerateMemeForm />
-      {memePic ? (
-        <img src={memePic} className="meme-picture" alt="Meme base" />
-      ) : (
-        <div className="meme-picture-loading">Loading picture...</div>
-      )}
+      <main>
+        {memePic ? (
+          <div className="meme-picture-container">
+            <div className="meme-text top">top</div>
+            <img src={memePic} className="meme-picture" alt="Meme base" />
+            <div className="meme-text bottom">bottom</div>
+          </div>
+        ) : (
+          <div className="meme-picture-loading">Loading picture...</div>
+        )}
+      </main>
     </>
   );
 }

@@ -7,10 +7,28 @@ h1 {
   text-align: center;
 }
 
-.meme-picture {
+main {
   display: flex;
-  margin: auto;
-  max-width: 90%;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 50px auto;
+}
+
+@font-face {
+  font-family: Anton;
+  src: url(./fonts/anton-regular-webfont.woff2);
+}
+
+.meme-picture-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.meme-picture {
+  max-width: 100%;
 }
 
 .meme-picture-loading {
@@ -18,4 +36,22 @@ h1 {
   max-width: 90%;
   font-size: 3em;
   text-align: center;
+}
+
+.meme-text {
+  position: absolute;
+  width: 100%;
+  font-family: Anton, sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.meme-text.top {
+  align-self: flex-start;
+}
+
+.meme-text.bottom {
+  align-self: flex-end;
 }
