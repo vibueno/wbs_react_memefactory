@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import GenerateMemeForm from "./components/GenerateMemeForm";
 
 import "./App.css";
 
@@ -24,7 +25,8 @@ function App() {
   return (
     <>
       <h1>The Meme Mine</h1>
-      <img src={memePic} />
+      <GenerateMemeForm />
+      <img src={memePic} className="meme-picture" alt="Meme base" />
     </>
   );
 }
