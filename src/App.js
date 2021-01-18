@@ -23,6 +23,7 @@ function App() {
 
   return (
     <>
+      <h1>The Meme Mine</h1>
       <img src={memePic} />
     </>
   );
