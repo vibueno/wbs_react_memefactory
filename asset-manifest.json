@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/wbs_react_memefactory/static/css/main.67e0047b.chunk.css",
+    "main.js": "/wbs_react_memefactory/static/js/main.262eba22.chunk.js",
+    "main.js.map": "/wbs_react_memefactory/static/js/main.262eba22.chunk.js.map",
+    "runtime-main.js": "/wbs_react_memefactory/static/js/runtime-main.92190a31.js",
+    "runtime-main.js.map": "/wbs_react_memefactory/static/js/runtime-main.92190a31.js.map",
+    "static/js/2.36440961.chunk.js": "/wbs_react_memefactory/static/js/2.36440961.chunk.js",
+    "static/js/2.36440961.chunk.js.map": "/wbs_react_memefactory/static/js/2.36440961.chunk.js.map",
+    "index.html": "/wbs_react_memefactory/index.html",
+    "static/css/main.67e0047b.chunk.css.map": "/wbs_react_memefactory/static/css/main.67e0047b.chunk.css.map",
+    "static/js/2.36440961.chunk.js.LICENSE.txt": "/wbs_react_memefactory/static/js/2.36440961.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.92190a31.js",
+    "static/js/2.36440961.chunk.js",
+    "static/css/main.67e0047b.chunk.css",
+    "static/js/main.262eba22.chunk.js"
+  ]
+}
