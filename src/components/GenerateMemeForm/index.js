@@ -7,7 +7,7 @@ const GenerateMemeForm = () => {
 
   return (
     <form className="meme-form" onSubmit={submitHandler}>
-      <label for="top-text-input" className="meme-form-field-label">
+      <label htmlFor="top-text-input" className="meme-form-field-label">
         Text top
       </label>
 
@@ -15,17 +15,17 @@ const GenerateMemeForm = () => {
         type="text"
         id="top-text-input"
         className="meme-form-field"
-        maxlength="20"
+        maxLength="40"
       />
 
-      <label for="bottom-text-input" className="meme-form-field-label">
+      <label htmlFor="bottom-text-input" className="meme-form-field-label">
         Text bottom
       </label>
       <input
         type="text"
         id="bottom-text-input"
         className="meme-form-field"
-        maxlength="20"
+        maxLength="40"
       />
       <button type="submit" className="meme-form-submit">
         Generate
