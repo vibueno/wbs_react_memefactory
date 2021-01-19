@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./index.css";
 
-const GenerateMemeForm = () => {
-  const submitHandler = () => {};
+const GenerateMemeForm = ({ submitHandler }) => {
+  const textTop = useRef();
+  const textBottom = useRef();
 
   return (
-    <form className="meme-form" onSubmit={submitHandler}>
+    <form
+      className="meme-form"
+      onSubmit={(e) => {
+        submitHandler(e, textTop.current.value, textBottom.current.value);
+      }}
+    >
       <label htmlFor="top-text-input" className="meme-form-field-label">
         Text top
       </label>
@@ -16,6 +22,7 @@ const GenerateMemeForm = () => {
         id="top-text-input"
         className="meme-form-field"
         maxLength="40"
+        ref={textTop}
       />
 
       <label htmlFor="bottom-text-input" className="meme-form-field-label">
@@ -26,6 +33,7 @@ const GenerateMemeForm = () => {
         id="bottom-text-input"
         className="meme-form-field"
         maxLength="40"
+        ref={textBottom}
       />
       <button type="submit" className="meme-form-submit">
         Generate
