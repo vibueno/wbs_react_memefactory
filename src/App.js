@@ -5,9 +5,11 @@ import "./App.css";
 
 function App() {
   const [memePics, setMemePics] = useState();
-  const [memePicURL, setMemePicURL] = useState();
+  const [memePicURL, setMemePicURL] = useState("");
   const [textTop, setTextTop] = useState("Text top");
   const [textBottom, setTextBottom] = useState("Text bottom");
+
+  const formRef = React.createRef();
 
   const errorHandler = (response) => {
     if (!response.ok) throw Error(response.statusText);
@@ -20,10 +22,37 @@ function App() {
     setTextBottom(text2);
   };
 
-  const getRandomPicURL = (memePics) => {
-    const url = memePics[Math.round(Math.random() * memePics.length - 1)].url;
+  const getRandomPicURL = (memePics) =>
+    memePics[Math.round(Math.random() * memePics.length - 1)].url;
 
-    return url;
+  const resetHandler = () => {
+    formRef.current.reset();
+    setTextTop("");
+    setTextBottom("");
+    setMemePicURL("noPic");
+  };
+
+  const renderPicture = () => {
+    switch (memePicURL) {
+      case "":
+        return <div className="meme-picture-loading">Loading picture...</div>;
+
+      case "noPic":
+        return (
+          <div className="meme-picture-container">
+            Get a random picture to start a new meme!
+          </div>
+        );
+
+      default:
+        return (
+          <div className="meme-picture-container">
+            <div className="meme-text top">{textTop}</div>
+            <img src={memePicURL} className="meme-picture" alt="" />
+            <div className="meme-text bottom">{textBottom}</div>
+          </div>
+        );
+    }
   };
 
   useEffect(() => {
@@ -41,23 +70,15 @@ function App() {
       <h1>The Meme Mine</h1>
       {memePics ? (
         <GenerateMemeForm
+          ref={formRef}
           submitHandler={submitHandler}
           clickHandlerRandomPic={() => {
             setMemePicURL(getRandomPicURL(memePics));
           }}
+          clickHandlerReset={resetHandler}
         />
       ) : null}
-      <main>
-        {memePicURL ? (
-          <div className="meme-picture-container">
-            <div className="meme-text top">{textTop}</div>
-            <img src={memePicURL} className="meme-picture" alt="Meme base" />
-            <div className="meme-text bottom">{textBottom}</div>
-          </div>
-        ) : (
-          <div className="meme-picture-loading">Loading picture...</div>
-        )}
-      </main>
+      <main>{renderPicture()}</main>
     </>
   );
 }
