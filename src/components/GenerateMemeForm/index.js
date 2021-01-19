@@ -10,7 +10,7 @@ const GenerateMemeForm = ({ submitHandler }) => {
     <form
       className="meme-form"
       onSubmit={(e) => {
-        submitHandler(e, textTop.current.value, textBottom.current.value);
+        submitHandler(e, textTop.current.value, textBottom);
       }}
     >
       <label htmlFor="top-text-input" className="meme-form-field-label">
@@ -35,7 +35,11 @@ const GenerateMemeForm = ({ submitHandler }) => {
         maxLength="40"
         ref={textBottom}
       />
-      <button type="submit" className="meme-form-submit">
+
+      <button className="meme-form-btn">Browse pic</button>
+      <button className="meme-form-btn">Random pic</button>
+
+      <button type="submit" className="meme-form-btn">
         Generate
       </button>
     </form>
