@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import "./index.css";
 
-const GenerateMemeForm = ({ submitHandler }) => {
+const GenerateMemeForm = ({ submitHandler, clickHandlerRandomPic }) => {
   const textTop = useRef();
   const textBottom = useRef();
 
@@ -36,8 +36,19 @@ const GenerateMemeForm = ({ submitHandler }) => {
         ref={textBottom}
       />
 
-      <button className="meme-form-btn">Browse pic</button>
-      <button className="meme-form-btn">Random pic</button>
+      <button type="button" className="meme-form-btn">
+        Browse pic
+      </button>
+      <button
+        type="button"
+        className="meme-form-btn"
+        onClick={() => {
+          clickHandlerRandomPic();
+        }}
+      >
+        {" "}
+        Random pic
+      </button>
 
       <button type="submit" className="meme-form-btn">
         Generate

@@ -4,7 +4,8 @@ import GenerateMemeForm from "./components/GenerateMemeForm";
 import "./App.css";
 
 function App() {
-  const [memePic, setMemePic] = useState();
+  const [memePics, setMemePics] = useState();
+  const [memePicURL, setMemePicURL] = useState();
   const [textTop, setTextTop] = useState("Text top");
   const [textBottom, setTextBottom] = useState("Text bottom");
 
@@ -19,26 +20,38 @@ function App() {
     setTextBottom(textBottom);
   };
 
+  const getRandomPicURL = (memePics) => {
+    const url = memePics[Math.round(Math.random() * memePics.length - 1)].url;
+
+    return url;
+  };
+
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then(errorHandler)
       .then((response) => response.json())
       .then((response) => {
-        const memes = response.data.memes;
-        const picIndex = Math.round(Math.random() * memes.length - 1);
-        setMemePic(memes[picIndex].url);
+        setMemePics(response.data.memes);
+        setMemePicURL(getRandomPicURL(response.data.memes));
       });
   }, []);
 
   return (
     <>
       <h1>The Meme Mine</h1>
-      <GenerateMemeForm submitHandler={submitHandler} />
+      {memePics ? (
+        <GenerateMemeForm
+          submitHandler={submitHandler}
+          clickHandlerRandomPic={() => {
+            setMemePicURL(getRandomPicURL(memePics));
+          }}
+        />
+      ) : null}
       <main>
-        {memePic ? (
+        {memePicURL ? (
           <div className="meme-picture-container">
             <div className="meme-text top">{textTop}</div>
-            <img src={memePic} className="meme-picture" alt="Meme base" />
+            <img src={memePicURL} className="meme-picture" alt="Meme base" />
             <div className="meme-text bottom">{textBottom}</div>
           </div>
         ) : (
