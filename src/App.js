@@ -14,10 +14,10 @@ function App() {
     else return response;
   };
 
-  const submitHandler = (e, textTop, textBottom) => {
+  const submitHandler = (e, text1, text2) => {
     e.preventDefault();
-    setTextTop(textTop);
-    setTextBottom(textBottom);
+    setTextTop(text1);
+    setTextBottom(text2);
   };
 
   const getRandomPicURL = (memePics) => {

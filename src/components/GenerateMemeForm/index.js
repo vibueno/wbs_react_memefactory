@@ -10,7 +10,7 @@ const GenerateMemeForm = ({ submitHandler, clickHandlerRandomPic }) => {
     <form
       className="meme-form"
       onSubmit={(e) => {
-        submitHandler(e, textTop.current.value, textBottom);
+        submitHandler(e, textTop.current.value, textBottom.current.value);
       }}
     >
       <label htmlFor="top-text-input" className="meme-form-field-label">
