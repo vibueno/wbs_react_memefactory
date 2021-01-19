@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wbs_react_memefactory/static/css/main.107ff831.chunk.css",
-    "main.js": "/wbs_react_memefactory/static/js/main.6152d7ef.chunk.js",
-    "main.js.map": "/wbs_react_memefactory/static/js/main.6152d7ef.chunk.js.map",
+    "main.js": "/wbs_react_memefactory/static/js/main.281b9add.chunk.js",
+    "main.js.map": "/wbs_react_memefactory/static/js/main.281b9add.chunk.js.map",
     "runtime-main.js": "/wbs_react_memefactory/static/js/runtime-main.92190a31.js",
     "runtime-main.js.map": "/wbs_react_memefactory/static/js/runtime-main.92190a31.js.map",
     "static/js/2.33a3b04a.chunk.js": "/wbs_react_memefactory/static/js/2.33a3b04a.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.92190a31.js",
     "static/js/2.33a3b04a.chunk.js",
     "static/css/main.107ff831.chunk.css",
-    "static/js/main.6152d7ef.chunk.js"
+    "static/js/main.281b9add.chunk.js"
   ]
 }
